@@ -13,9 +13,12 @@ var tzdetect = {
 				return m.format("DDHHmm");
 			}).join(' ');
 		}, lockey = makekey(base);
-		tzdetect.names.forEach(function(id){
-			if (makekey(id)===lockey) results.push(id);
-		});
+    for (index = 0; index < tzdetect.names.length; ++index) {
+        if (makekey(tzdetect.names[index])===lockey){
+          results.push(tzdetect.names[index]);
+          break;
+        }
+    }
 		return results;
 	}
 };
